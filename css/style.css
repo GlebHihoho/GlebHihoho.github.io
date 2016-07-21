@@ -1,0 +1,419 @@
+html {
+	height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+body {
+	width: auto;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	
+	font-family: "PT Sans", Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 26px;
+	text-transform: uppercase;
+	color: #000000;
+	
+	background-color: #f2f2f2;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: orange;
+    cursor: pointer;
+}
+
+.conteiner {
+	position: relative;
+	display: table;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ----------------------------- HEADER ---------------------------- */
+
+header, footer {
+	margin: 0px;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+
+.flex-conteiner {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+nav ul li {
+	list-style: none;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+}
+
+header {
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 10px;
+	
+	z-index: 20;
+}
+
+.user-menu {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.navigation-menu {
+	margin-right: 10px;
+}
+
+/* ---------------------- FOOTER --------------------- */
+
+.contact-information,
+.social-btn {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.contact-information {
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+
+.contact-information p {
+	padding: 0px;
+	margin: 0px;
+	
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 21px;
+}
+
+.social-btn {
+	margin-left: 800px;
+}
+
+.social-btn a {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+
+	width: 50px;
+	height: 50px;
+	
+	margin-left: 15px;
+	padding-left: 12px;
+	padding-top: 12px;
+	
+	background-color: orange;
+	
+	border-radius: 50%;
+	
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.social-btn a:hover {
+	background-color: darkorange;
+}
+
+/* ---------------------------------------------------- */
+
+.container-main {
+	display: table;
+	margin: auto;
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+
+.container-table-cell {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.table {
+	border-collapse: collapse;
+	margin: auto;
+	
+	cursor: pointer;
+}
+
+.table-container {
+	border-collapse: collapse;
+	margin: auto;
+
+}
+
+tr {
+	height: 50px;
+}
+
+td {
+	width: 150px;
+	border-spacing: 0px;
+	border: 2px solid black;
+
+}
+
+.table td:hover {
+	background-color: orange;
+}
+
+
+/*HIDDEN MENU*/
+
+.hidden-menu {
+	display: none;
+	
+	width: 150px;
+	text-align: center;
+	
+	position: absolute;
+    background-color: #f2f2f2;
+	
+	top: 0;
+	left: 0;
+}
+
+.hidden-table td:hover {
+	background-color: darkorange;
+	cursor: pointer;
+}
+
+
+/*JS*/
+
+.active {
+	background-color: darkorange;
+}
+
+.view {
+	display: block;
+}
+
+.color-color {
+    background-color: #ccccb3;
+}
+
+/* --------------- GAME LVL LIST------------------- */
+
+main {
+	flex: 1;
+	
+}
+
+.game-lvl-list {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	
+	width: 100%;
+	
+	background-color: #f2f2f2;
+}
+
+.lvl-list {
+	display: inline-block;
+    width: 120px;
+    text-align: center;
+    list-style: none;
+    margin: auto;
+    padding: 0px;
+	margin-top: 70px;
+	margin-bottom: 0px;
+	margin-left: 200px;
+}
+
+.lvl-list li {
+    margin-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+
+.lvl-list img {
+	margin-top: 20px;
+}
+
+.lvl-list li:hover {
+    color: orange;
+    cursor: pointer;
+    border-color: orange;
+}
+
+/* --------------- COMMUNICATION ------------------- */
+
+.communication {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+.communication img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------ ICON CYMBOLS ------------------------------ */
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: "symbols-sedona";
+	src: 
+		url("../fonts/symbols-sedona.woff") format("woff"),
+		url("../fonts/symbols-sedona.woff2") format("woff2");
+}
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+	display: inline-block;
+	width: 1em;
+	margin-right: 0.2em;
+	margin-left: 0.2em;
+	font-weight: normal;
+	line-height: 1em;
+	font-family: "symbols-sedona";
+	text-align: center;
+	text-transform: none;
+	text-decoration: inherit;
+	font-style: normal;
+	font-variant: normal;
+	speak: none;
+}
+.icon-facebook::before {
+	content: "\66";
+}
+
+/* "f" */
+
+.icon-twitter::before {
+	content: "\74";
+}
+
+/* "t" */
+
+.icon-up-dir::before {
+	content: "\25b2";
+}
+
+/* "▲" */
+
+.icon-down-dir::before {
+	content: "\25bc";
+}
+
+/* "▼" */
+
+.icon-star::before {
+	content: "\2605";
+}
+
+/* "★" */
+
+.icon-check-off::before {
+	content: "\2610";
+}
+
+/* "☐" */
+
+.icon-check-on::before {
+	content: "\2611";
+}
+
+/* "☑" */
+
+.icon-calendar::before {
+	content: "\e800";
+}
+
+/* "" */
+
+.icon-plus::before {
+	content: "\e801";
+}
+
+/* "" */
+
+.icon-minus::before {
+	content: "\e802";
+}
+
+/* "" */
+
+.icon-youtube::before {
+	content: "\f39e";
+}
+
+/* "" */
+
+
+
