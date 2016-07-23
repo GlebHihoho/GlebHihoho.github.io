@@ -347,12 +347,3 @@ function startGame() {
 };
 
 clickStartBtn();
-
-
-
-
-
-
-
-
-

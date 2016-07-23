@@ -145,8 +145,8 @@ header {
 
 .logo {
 	position: absolute;
-	margin-left: 50px;
-	margin-top: 10px;
+	margin-left: 120px;
+	margin-top: 15px;
 	
 	z-index: 50;
 }
@@ -164,55 +164,63 @@ header {
 /* ----------------------------  FOOTER  --------------------------- */
 /* ----------------------------------------------------------------- */
 
-.contact-information,
+
+
+.technologies {
+    display: inline-block;
+    vertical-align: middle;
+    
+    margin: 0px;
+    margin-left: 100px;
+    padding: 0px;
+}
+
+.technologies img {
+    margin: 0px;
+    margin-top: 7px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
 .social-btn {
 	display: inline-block;
 	vertical-align: middle;
-}
-
-.contact-information {
-	margin-top: 10px;
-	margin-left: 50px;
-	margin-bottom: 10px;
-}
-
-.contact-information p {
-	padding: 0px;
-	margin: 0px;
-	
-	font-size: 12px;
-	font-weight: 500;
-	line-height: 21px;
-}
-
-.social-btn {
-	margin-left: 800px;
+    float: right;
+    
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 40px;
 }
 
 .social-btn a {
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
+    text-align: center;
 
 	width: 50px;
 	height: 50px;
 	
 	margin-left: 15px;
-	padding-left: 12px;
-	padding-top: 12px;
+    
+	padding-left: 7px;
+    padding-right: 8px;
+	padding-top: 10px;
 	
 	background-color: orange;
 	
 	border-radius: 50%;
 	
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 25px;
+    line-height: 30px;
 }
 
 .social-btn a:hover {
 	background-color: darkorange;
 }
 
+/* ----------------------------------------------------------------- */
 /* ---------------------------------------------------- */
 
 .container-main {
@@ -351,143 +359,5 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ------------------------------ ICON CYMBOLS ------------------------------ */
-
-@font-face {
-	font-weight: normal;
-	font-style: normal;
-	font-family: "symbols-sedona";
-	src: 
-		url("../fonts/symbols-sedona.woff") format("woff"),
-		url("../fonts/symbols-sedona.woff2") format("woff2");
-}
-[class^="icon-"]::before,
-[class*=" icon-"]::before {
-	display: inline-block;
-	width: 1em;
-	margin-right: 0.2em;
-	margin-left: 0.2em;
-	font-weight: normal;
-	line-height: 1em;
-	font-family: "symbols-sedona";
-	text-align: center;
-	text-transform: none;
-	text-decoration: inherit;
-	font-style: normal;
-	font-variant: normal;
-	speak: none;
-}
-.icon-facebook::before {
-	content: "\66";
-}
-
-/* "f" */
-
-.icon-twitter::before {
-	content: "\74";
-}
-
-/* "t" */
-
-.icon-up-dir::before {
-	content: "\25b2";
-}
-
-/* "▲" */
-
-.icon-down-dir::before {
-	content: "\25bc";
-}
-
-/* "▼" */
-
-.icon-star::before {
-	content: "\2605";
-}
-
-/* "★" */
-
-.icon-check-off::before {
-	content: "\2610";
-}
-
-/* "☐" */
-
-.icon-check-on::before {
-	content: "\2611";
-}
-
-/* "☑" */
-
-.icon-calendar::before {
-	content: "\e800";
-}
-
-/* "" */
-
-.icon-plus::before {
-	content: "\e801";
-}
-
-/* "" */
-
-.icon-minus::before {
-	content: "\e802";
-}
-
-/* "" */
-
-.icon-youtube::before {
-	content: "\f39e";
-}
-
-/* "" */
-
 
 
