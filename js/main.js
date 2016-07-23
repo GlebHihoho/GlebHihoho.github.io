@@ -329,29 +329,26 @@ function classActiveViewDelete() {
     controlMenu.classList.remove('view');
 };
 
-
-
 // 
-// Функция отвечает за закрытие меню ввода чисел по клику на пустое пространство по бокам
+// Функции startGame() и clickStartBtn() вешают обработчик события на кнопку старта и
+// добавляет атрибут hidden стартовой страничке
 //
 
-//function closeMenu() {
-//	var controlMenu = document.getElementById('control-menu');
-//	var main = document.getElementById('main');
-//	
-//	main.onclick = close;
-////	console.log(main);
-//};
-//
-//function close() {
-//	var controlMenu = document.getElementById('control-menu');
-//	var tableContainer = document.querySelector('.table-container');
-//	
-////	controlMenu.classList.remove('view');
-//	console.log(tableContainer);
-//}
-//
-//closeMenu();
+function clickStartBtn() {
+    var startGameBtn = document.getElementById('btn-new-game');
+    
+    startGameBtn.onclick = startGame;
+};
+
+function startGame() {
+    var startGameBtn = document.querySelector('.first-page');
+    
+    startGameBtn.setAttribute('hidden', 'hidden');
+};
+
+clickStartBtn();
+
+
 
 
 
