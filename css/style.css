@@ -77,7 +77,7 @@ header {
 	margin-left: 50px;
 	margin-top: 10px;
 	
-	z-index: 20;
+	z-index: 50;
 }
 
 .user-menu {
@@ -230,6 +230,7 @@ main {
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: 40;
 	
 	width: 100%;
 	

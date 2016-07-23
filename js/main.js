@@ -12,8 +12,19 @@ function clickMenu() {
 function gameFieldActive() {
 	var gameCell = document.querySelectorAll('.cell');
 	for (var i = 0; i < gameCell.length; i++) {
-		gameCell[i].onclick = activeClass;
+        if ( !(gameCell[i].classList.contains('color-color')) ) {
+		  gameCell[i].addEventListener('click', activeClass);
+        };
         gameCell[i].addEventListener('click', eventFeedback);
+	};
+};
+
+// Ф-я gameFieldActiveDelete() удаляет обработчики события с игрового поля
+
+function gameFieldActiveDelete() {
+	var gameCell = document.querySelectorAll('.cell');
+	for (var i = 0; i < gameCell.length; i++) {
+		  gameCell[i].removeEventListener('click', activeClass);
 	};
 };
 
@@ -146,6 +157,7 @@ function clearField() {
     var field = document.querySelectorAll('.cell');
     var gameField = document.querySelector('.table-container');
     
+    gameFieldActiveDelete();
     
     for (var i = 0; i < field.length; i++) {
         field[i].innerHTML = '';
@@ -193,7 +205,7 @@ function gameLevelList() {
     
 	for (var i = 0; i < gameList.length; i++) {
 		gameList[i].onclick = lvlGame;
-    }
+    };
 };
 
 // Ф-я lvlGame(click) отвечает за передачу данных из массива в игровое поле. Переключение уровней
@@ -204,6 +216,9 @@ function lvlGame(click) {
     var j = clickList.id;
 	var tableContainer = document.querySelector('.table-container');
     
+    gameFieldActiveDelete();
+    classActiveViewDelete();
+    
     for (var i = 0; i < gameCell.length; i++) {
         gameCell[i].innerHTML = gameLevel[j][i];
         gameCell[i].classList.remove('color-color');
@@ -212,9 +227,10 @@ function lvlGame(click) {
             gameCell[i].classList.add('color-color');
         }
     };
-	
+
     levelList.setAttribute('hidden','hidden');
     tableContainer.removeAttribute('hidden');
+    gameFieldActive();
 	
     var imgBlock = document.getElementById('image-communication');
     
@@ -272,7 +288,6 @@ function eventFeedback() {
 };
 
 gameLevelList();
-gameFieldActive();
 clickMenu();
 
 
@@ -298,6 +313,23 @@ function coords(eventObj) {
 }
 
 cursorCoordinates();
+
+// 
+// Ф-я будет удаляет active класс с ячеек и удаляет класс view с игрового меню
+//
+
+function classActiveViewDelete() {
+    var controlMenu = document.getElementById('control-menu');
+    var gameCell = document.querySelectorAll('.cell');
+    
+    for (var i = 0; i < gameCell.lenght; ++i) {
+        gameCell[i].classList.remove('active');
+    };
+    
+    controlMenu.classList.remove('view');
+};
+
+
 
 // 
 // Функция отвечает за закрытие меню ввода чисел по клику на пустое пространство по бокам
