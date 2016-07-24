@@ -102,51 +102,6 @@ function activeClass(click) {
 	controlMenu.classList.toggle('view');
 };
 
-// Ф-я compareComments(valA, valB) отвечает за сортировку массивов по возростанию элементов
-
-function compareValue(valA, valB) {
-  if (valA > valB) {
-    return 1;
-  } else if (valA === valB) {
-    return 0;
-  } else {
-    return -1;
-  }
-};
-
-// 
-// Ф-и inspection(clas) проверяют условие игры по горизонтали, вертикали и в квадратах
-//
-
-function inspection(clas) {
-	var emptyArray = [];
-	var referenceArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-	
-	var inspectionCell = document.querySelectorAll('.' + clas);
-	
-	inspectionCell.forEach(function(item, i, inspectionCell) {
-		emptyArray[i] = item.innerHTML;
-	});
-	
-	emptyArray.sort(compareValue);
-	
-	function testBlock() {
-		if ( referenceArray.toString() == emptyArray.toString() ) {
-			return true;
-		} else {
-			return false;
-		}
-	};
-	
-	testBlock();
-	
-	if ( testBlock() ) {
-		return true;
-	} else {
-		return false;
-	}
-};
-
 // 
 // Ф-и clearField() очистки игрового поля от чисел
 //
@@ -227,7 +182,8 @@ function lvlGame(click) {
             gameCell[i].classList.add('color-color');
         }
     };
-
+    
+    selectLvlBtn.classList.remove('active-color');
     levelList.setAttribute('hidden','hidden');
     tableContainer.removeAttribute('hidden');
     gameFieldActive();
@@ -244,7 +200,7 @@ selectLvlBtn.addEventListener('click', function(){
     if ( levelList.hasAttribute('hidden') ) {
         levelList.removeAttribute('hidden');
     } else {
-        levelList.setAttribute('hidden','hidden');
+//        levelList.setAttribute('hidden','hidden');
     }
 });
 
@@ -309,7 +265,6 @@ function coords(eventObj) {
 	
 	controlMenu.style.top = y + 'px';
 	controlMenu.style.left = x + 'px';
-
 }
 
 cursorCoordinates();
@@ -341,9 +296,84 @@ function clickStartBtn() {
 };
 
 function startGame() {
-    var startGameBtn = document.querySelector('.first-page');
+    var startGamePage = document.querySelector('.first-page');
     
-    startGameBtn.setAttribute('hidden', 'hidden');
+    startGamePage.setAttribute('hidden', 'hidden');
+    selectLvlBtn.classList.add('active-color');
 };
 
 clickStartBtn();
+
+// 
+// Функции hihohoPage() и clickHihohoPageBtn() вешают обработчик события на кнопку HihohoGaming и
+// добавляет атрибут hidden 
+//
+
+function clickHihohoPageBtn() {
+    var hihohoPageBtn  = document.getElementById('hihoho-gaming');
+    
+    hihohoPageBtn.onclick = hihohoPage;
+};
+
+function hihohoPage() {
+    var hihohoPage = document.querySelector('.hihoho-gaming-page');
+    var hihohoPageBtn  = document.getElementById('hihoho-gaming');
+    
+    if ( hihohoPage.hasAttribute('hidden') ) {
+        hihohoPage.removeAttribute('hidden');
+        hihohoPageBtn.classList.add('active-color');
+        selectLvlBtn.classList.remove('active-color');
+    } else {
+        hihohoPage.setAttribute('hidden', 'hidden');
+        hihohoPageBtn.classList.remove('active-color');
+//        selectLvlBtn.classList.add('active-color');
+    };
+};
+
+clickHihohoPageBtn();
+
+// 
+// Ф-я отвечает за добавление активных классво кнопкам HihohoGaming и Выбрать уровень
+//
+
+function activeMenuBtn() {
+    var levelList = document.querySelector('.game-lvl-list');
+    var selectLvlBtn = document.getElementById('select-lvl');
+    var hihohoPage = document.querySelector('.hihoho-gaming-page');
+    var hihohoPageBtn  = document.getElementById('hihoho-gaming');
+    
+    if ( levelList.hasAttribute('hidden') ) {
+        selectLvlBtn.classList.remove('active-color');
+    } else {
+        selectLvlBtn.classList.add('active-color');
+    };
+    
+    if ( !(hihohoPage.hasAttribute('hidden')) && levelList.hasAttribute('hidden') ) {
+        selectLvlBtn.classList.remove('active-color');
+    } else {
+        selectLvlBtn.classList.add('active-color');
+    }
+    
+    hihohoPage.setAttribute('hidden', 'hidden');
+    hihohoPageBtn.classList.remove('active-color');
+};
+
+selectLvlBtn.addEventListener('click', activeMenuBtn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -164,8 +164,6 @@ header {
 /* ----------------------------  FOOTER  --------------------------- */
 /* ----------------------------------------------------------------- */
 
-
-
 .technologies {
     display: inline-block;
     vertical-align: middle;
@@ -292,6 +290,10 @@ td {
 	background-color: darkorange;
 }
 
+.active-color {
+	color: darkorange;
+}
+
 .view {
 	display: block;
 }
@@ -300,11 +302,12 @@ td {
     background-color: #ccccb3;
 }
 
-/* --------------- GAME LVL LIST------------------- */
+/* ----------------------------------------------------------------- */
+/* ------------------------  GAME LVL LIST  ------------------------ */
+/* ----------------------------------------------------------------- */
 
 main {
 	flex: 1;
-	
 }
 
 .game-lvl-list {
@@ -345,6 +348,12 @@ main {
     border-color: orange;
 }
 
+.lvl-list li:active {
+    color: darkorange;
+    border-color: darkorange;
+}
+
+/* ----------------------------------------------------------------- */
 /* --------------- COMMUNICATION ------------------- */
 
 .communication {
@@ -359,5 +368,70 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ----------------------------------------------------------------- */
+/* ---------------------  HIHOHO GAMING PAGE  ---------------------- */
+/* ----------------------------------------------------------------- */
+
+.hihoho-gaming-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 45;
+    
+    width: 100%;
+    
+    background-color: #f2f2f2;
+}
+
+.hihoho-gaming-page span {
+    color: #3399ff;
+}
+
+.hihoho-gaming-page h1,
+.hihoho-gaming-page h2,
+.hihoho-gaming-page h3 {
+    text-align: center;
+}
+
+.hihoho-gaming-page p {
+    padding-left: 300px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.hihoho-gaming-page a {
+    color: orange;
+}
+
+.hihoho-gaming-page a:hover {
+    color: darkorange;
+}
+
+.my-friends {
+    position: relative;
+    margin-left: 300px;
+}
+
+.my-friends img {
+    position: absolute;
+    top: -20px;
+    left: 450px;
+}
+
+.gaming-page-img img {
+    display: block;
+    margin: auto;
+}
+
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+
+
+
+
+
+
 
 
