@@ -199,9 +199,7 @@ function lvlGame(click) {
 selectLvlBtn.addEventListener('click', function(){
     if ( levelList.hasAttribute('hidden') ) {
         levelList.removeAttribute('hidden');
-    } else {
-//        levelList.setAttribute('hidden','hidden');
-    }
+    };
 });
 
 imgBlock = document.getElementById('image-communication');
@@ -326,14 +324,14 @@ function hihohoPage() {
     } else {
         hihohoPage.setAttribute('hidden', 'hidden');
         hihohoPageBtn.classList.remove('active-color');
-//        selectLvlBtn.classList.add('active-color');
+//        selectLvlBtn.classList.toggle('active-color');
     };
 };
 
 clickHihohoPageBtn();
 
 // 
-// Ф-я отвечает за добавление активных классво кнопкам HihohoGaming и Выбрать уровень
+// Ф-я отвечает activeMenuBtn() за добавление активных классов кнопкам HihohoGaming и Выбрать уровень
 //
 
 function activeMenuBtn() {
@@ -352,28 +350,16 @@ function activeMenuBtn() {
         selectLvlBtn.classList.remove('active-color');
     } else {
         selectLvlBtn.classList.add('active-color');
-    }
+    };
     
+    if ( hihohoPage.hasAttribute('hidden') && !(levelList.hasAttribute('hidden')) ) {
+        selectLvlBtn.classList.add('active-color');
+    };
+ 
     hihohoPage.setAttribute('hidden', 'hidden');
     hihohoPageBtn.classList.remove('active-color');
 };
 
 selectLvlBtn.addEventListener('click', activeMenuBtn);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
