@@ -16,6 +16,7 @@ function gameFieldActive() {
 		  gameCell[i].addEventListener('click', activeClass);
         };
         gameCell[i].addEventListener('click', eventFeedback);
+        gameCell[i].addEventListener('click', counter);
 	};
 };
 
@@ -46,36 +47,10 @@ function active(click) {
 				item.classList.remove('active');
 				}
 			}
+            
 			controlMenu.classList.remove('view');
-			if (
-					inspection('cell-1') &&
-					inspection('cell-2') &&
-					inspection('cell-3') &&
-					inspection('cell-4') &&
-					inspection('cell-5') &&
-					inspection('cell-6') &&
-					inspection('cell-7') &&
-					inspection('cell-8') &&
-					inspection('cell-9') &&
-					inspection('horizont-1') &&
-					inspection('horizont-2') &&
-					inspection('horizont-3') &&
-					inspection('horizont-4') &&
-					inspection('horizont-5') &&
-					inspection('horizont-6') &&
-					inspection('horizont-7') &&
-					inspection('horizont-8') &&
-					inspection('horizont-9') &&
-					inspection('vertical-1') &&
-					inspection('vertical-2') &&
-					inspection('vertical-3') &&
-					inspection('vertical-4') &&
-					inspection('vertical-5') &&
-					inspection('vertical-6') &&
-					inspection('vertical-7') &&
-					inspection('vertical-8') &&
-					inspection('vertical-9') 
-			) {
+            
+			if ( counter() > 81	) {
 				gameField.style.background = 'orange';
                 feedback.winGame();
                 controlMenu.classList.remove('view');
