@@ -7,7 +7,7 @@ function clickMenu() {
 	};
 };
 
-// Ф-я gameFieldActive() добавляем обработчики события на игровое поля
+// Ф-я gameFieldActive() добавляем обработчики события на ячейки игрового поля
 
 function gameFieldActive() {
 	var gameCell = document.querySelectorAll('.cell');
@@ -17,6 +17,7 @@ function gameFieldActive() {
         };
         gameCell[i].addEventListener('click', eventFeedback);
         gameCell[i].addEventListener('click', counter);
+//		gameCell[i].addEventListener('click', counterValuesFunction);
 	};
 };
 
@@ -46,19 +47,14 @@ function active(click) {
 				item.innerHTML = '';
 				item.classList.remove('active');
 				}
-			}
+			};
             
 			controlMenu.classList.remove('view');
-            
-			if ( counter() > 81	) {
-				gameField.style.background = 'orange';
-                feedback.winGame();
-                controlMenu.classList.remove('view');
-			} else {
-                gameField.style.background = '';
-			}
+			
+            counterValuesFunction();
+			viewResultsGame();
 		};
-	})
+	});
 };
 
 // Ф-я activeClass() передаёт ячейкам игрового поля класс 'active' и 'view'
@@ -78,54 +74,10 @@ function activeClass(click) {
 };
 
 // 
-// Ф-и clearField() очистки игрового поля от чисел
-//
-
-var clearBtn = document.getElementById('clear-btn');
-
-function clearField() {
-    var field = document.querySelectorAll('.cell');
-    var gameField = document.querySelector('.table-container');
-    
-    gameFieldActiveDelete();
-    
-    for (var i = 0; i < field.length; i++) {
-        field[i].innerHTML = '';
-        field[i].style.background = '';
-        field[i].classList.remove('active');
-        field[i].classList.remove('color-color');
-    };
-    
-    gameField.style.background = '';
-    imgBlock.src = 'img/1.png';
-};
-
-clearBtn.onclick = clearField;
-
-// 
-// Ф-и для вывода в консоль значений введённых игроком
-//
-
-var viewConsoleBtn = document.getElementById('view-console');
-
-function viewConsole() {
-    var field = document.querySelectorAll('.cell');
-    var viewArrey = [];
-    
-    for (var i = 0; i < field.length; i++) {
-        viewArrey[i] = field[i].innerHTML;
-    };
-    
-    console.log(viewArrey);
-};
-
-viewConsoleBtn.onclick = viewConsole;
-
-// 
 // Ф-я для переключения уровней игры
 //
 
-// Ф-я gameFieldActive() добавляем обработчики клика на элементы списка "Выбрать уровень"
+// Ф-я gameLevelList() добавляем обработчики клика на элементы списка "Выбрать уровень"
 
 var selectLvlBtn = document.getElementById('select-lvl');
 var levelList = document.querySelector('.game-lvl-list');
@@ -176,45 +128,6 @@ selectLvlBtn.addEventListener('click', function(){
         levelList.removeAttribute('hidden');
     };
 });
-
-imgBlock = document.getElementById('image-communication');
-
-var feedback = {
-    startGame: function() {
-        imgBlock.src = 'img/2.png';
-    },
-    
-    winGame: function() {
-        imgBlock.src = 'img/win.png';
-    },
-    
-    deleteImg: function() {
-        imgBlock.src = '';
-    }
-};
-
-function eventFeedback() {
-    if ( 			
-        inspection('cell-1') ||
-		inspection('cell-9') 
-    ) { 
-        imgBlock.src = 'img/3.png';
-    } else if (
-        inspection('horizont-3') ||
-        inspection('horizont-6') ||
-        inspection('horizont-9')
-    ) {
-        imgBlock.src = 'img/4.png';
-    } else if (
-        inspection('vertical-1') ||
-        inspection('vertical-4') ||
-        inspection('vertical-7')
-    ) {
-        imgBlock.src = 'img/5.png';
-    } else {
-//        imgBlock.src = '';
-    };
-};
 
 gameLevelList();
 clickMenu();

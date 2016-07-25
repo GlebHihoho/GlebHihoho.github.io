@@ -98,19 +98,52 @@ function resultsGame() {
     }
 };
 
+//
+// Ф-я viewResultsGame() отвечает за отображение результата игры
+//
 
+function viewResultsGame() {
+	var controlMenu = document.getElementById('control-menu');
+	var gameField = document.querySelector('.table-container');
+	
+	if ( counter() > 81 && resultsGame() ) {
+		gameField.style.background = 'orange';
+        feedback.winGame();
+        controlMenu.classList.remove('view');
+		gameFieldActiveDelete();
+	} else if ( counter() > 81 ) {
+		gameField.style.background = '';
+		feedback.lossGame();
+	};
+};
 
+//
+// Ф-я counterValuesFunction() считает сколько inspection(clas) вернуло положительные значения
+//
 
-
-
-
-
-
-
-
-
-
-
+function counterValuesFunction() {
+	var countTrue = 0;
+	
+	for (var i = 1; i <= 9; i++) {
+		if ( inspection('cell-' + i) ) {
+			countTrue = countTrue + 1;
+		}
+	}
+	
+	for (var i = 1; i <= 9; i++) {
+		if ( inspection('horizont-' + i) ) {
+			countTrue = countTrue + 1;
+		}
+	}
+	
+	for (var i = 1; i <= 9; i++) {
+		if ( inspection('vertical-' + i) ) {
+			countTrue = countTrue + 1;
+		}
+	}
+	
+	return countTrue;
+};
 
 
 
