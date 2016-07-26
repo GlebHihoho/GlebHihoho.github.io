@@ -144,13 +144,3 @@ function counterValuesFunction() {
 	
 	return countTrue;
 };
-
-
-
-
-
-
-
-
-
-

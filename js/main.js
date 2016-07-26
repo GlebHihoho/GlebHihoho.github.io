@@ -15,9 +15,8 @@ function gameFieldActive() {
         if ( !(gameCell[i].classList.contains('color-color')) ) {
 		  gameCell[i].addEventListener('click', activeClass);
         };
-        gameCell[i].addEventListener('click', eventFeedback);
+
         gameCell[i].addEventListener('click', counter);
-//		gameCell[i].addEventListener('click', counterValuesFunction);
 	};
 };
 
@@ -53,6 +52,7 @@ function active(click) {
 			
             counterValuesFunction();
 			viewResultsGame();
+			comunicationLogic();
 		};
 	});
 };
@@ -97,6 +97,7 @@ function lvlGame(click) {
     var gameCell = document.querySelectorAll('.cell');
     var j = clickList.id;
 	var tableContainer = document.querySelector('.table-container');
+	var gameField = document.querySelector('.table-container');
     
     gameFieldActiveDelete();
     classActiveViewDelete();
@@ -114,6 +115,7 @@ function lvlGame(click) {
     levelList.setAttribute('hidden','hidden');
     tableContainer.removeAttribute('hidden');
     gameFieldActive();
+	gameField.style.background = '';
 	
     var imgBlock = document.getElementById('image-communication');
     

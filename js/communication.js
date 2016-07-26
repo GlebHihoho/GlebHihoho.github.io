@@ -19,28 +19,64 @@ var feedback = {
 	
 	lossGame: function() {
 		imgBlock.src = 'img/8.png';
+	},
+	
+	lolGame: function() {
+		imgBlock.src = 'img/9.png';
+	},
+	
+	firstStep: function() {
+		imgBlock.src = 'img/6.png';
+	},
+	
+	secondtStep: function() {
+		imgBlock.src = 'img/3.png';
+	},
+	
+	thirdStep: function() {
+		imgBlock.src = 'img/5.png';
+	},
+
+	fourthStep: function() {
+		imgBlock.src = 'img/4.png';
 	}
 };
 
-function eventFeedback() {
-    if ( 			
-        inspection('cell-1') ||
-		inspection('cell-9') 
-    ) { 
-        imgBlock.src = 'img/3.png';
-    } else if (
-        inspection('horizont-3') ||
-        inspection('horizont-6') ||
-        inspection('horizont-9')
-    ) {
-        imgBlock.src = 'img/4.png';
-    } else if (
-        inspection('vertical-1') ||
-        inspection('vertical-4') ||
-        inspection('vertical-7')
-    ) {
-        imgBlock.src = 'img/5.png';
-    } else {
-//        imgBlock.src = '';
-    };
+//
+// Ф-я которая будет отвечать за логику отображения различных сообщений реагирующих
+// на поведение игрока
+//
+
+function comunicationLogic() {
+	if ( counter() >= 40 && counter() <= 50 ) {
+		if ( counterValuesFunction() == 1 ) {
+			feedback.firstStep();
+		};
+	} else if ( counter() == 50 ) {
+		feedback.deleteImg();
+	};
+	
+	if ( counter() > 50 && counter() <= 60 ) {
+		if ( counterValuesFunction() == 2 || counterValuesFunction() == 3 || counterValuesFunction() == 4 ) {
+			feedback.secondtStep();
+		};
+	} else if ( counter() == 60 ) {
+		feedback.deleteImg();
+	};
+	
+	if ( counter() > 60 && counter() <= 70 ) {
+		if ( counterValuesFunction() >= 5 || counterValuesFunction() <= 11 ) {
+			feedback.thirdStep();
+		};
+	} else if ( counter() == 60 ) {
+		feedback.deleteImg();
+	};
+	
+	if ( counter() > 70 && counter() <= 78 ) {
+		if ( counterValuesFunction() >= 13 || counterValuesFunction() <= 25 ) {
+			feedback.fourthStep();
+		};
+	} else if ( counter() == 79 ) {
+		feedback.deleteImg();
+	};
 };
