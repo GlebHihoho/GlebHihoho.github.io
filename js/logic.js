@@ -107,7 +107,7 @@ function viewResultsGame() {
 	var gameField = document.querySelector('.table-container');
 	
 	if ( counter() > 81 && resultsGame() ) {
-		gameField.style.background = 'orange';
+		gameField.style.background = '#007FFF';
         feedback.winGame();
         controlMenu.classList.remove('view');
 		gameFieldActiveDelete();

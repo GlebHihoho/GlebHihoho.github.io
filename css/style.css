@@ -20,7 +20,7 @@ body {
 	line-height: 26px;
 	text-transform: uppercase;
 	color: #000000;
-	
+
 	background-color: #f2f2f2;
 }
 
@@ -184,7 +184,7 @@ header {
 	display: inline-block;
 	vertical-align: middle;
     float: right;
-    
+	
     margin-top: 15px;
     margin-bottom: 15px;
     margin-right: 40px;
@@ -244,7 +244,6 @@ header {
 .table-container {
 	border-collapse: collapse;
 	margin: auto;
-
 }
 
 tr {
@@ -252,10 +251,16 @@ tr {
 }
 
 td {
+	box-sizing: border-box;
 	width: 150px;
 	border-spacing: 0px;
 	border: 2px solid black;
+}
 
+.table td {
+	box-sizing: border-box;
+	width: 48px;
+	height: 48px;
 }
 
 .table td:hover {
@@ -263,7 +268,9 @@ td {
 }
 
 
-/*HIDDEN MENU*/
+/* ----------------------------------------------------------------- */
+/* -------------------------  HIDDEN MENU  ------------------------- */
+/* ----------------------------------------------------------------- */
 
 .hidden-menu {
 	display: none;
@@ -283,31 +290,16 @@ td {
 	cursor: pointer;
 }
 
-
-/*JS*/
-
-.active {
-	background-color: darkorange;
-}
-
-.active-color {
-	color: darkorange;
-}
-
-.view {
-	display: block;
-}
-
-.color-color {
-    background-color: #ccccb3;
-}
-
 /* ----------------------------------------------------------------- */
 /* ------------------------  GAME LVL LIST  ------------------------ */
 /* ----------------------------------------------------------------- */
 
-main {
+#main {
 	flex: 1;
+	background-image: url('');
+	background-repeat: no-repeat;
+	background-position: right 15% top 20%;
+	background-size: 25%;
 }
 
 .game-lvl-list {
@@ -354,7 +346,8 @@ main {
 }
 
 /* ----------------------------------------------------------------- */
-/* --------------- COMMUNICATION ------------------- */
+/* ------------------------- COMMUNICATION ------------------------- */
+/* ----------------------------------------------------------------- */
 
 .communication {
     width: 130px;
@@ -425,9 +418,28 @@ main {
 }
 
 /* ----------------------------------------------------------------- */
-/* ----------------------------------------------------------------- */
+/* --------------------------  JS CLASS  --------------------------- */
 /* ----------------------------------------------------------------- */
 
+.active {
+	background-color: darkorange;
+}
+
+.active-color {
+	color: darkorange;
+}
+
+.view {
+	display: block;
+}
+
+.color-color {
+    background-color: #ccccb3;
+}
+
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
 
 
 

@@ -116,6 +116,7 @@ function lvlGame(click) {
     tableContainer.removeAttribute('hidden');
     gameFieldActive();
 	gameField.style.background = '';
+	updateBackground();
 	
     var imgBlock = document.getElementById('image-communication');
     
@@ -214,7 +215,6 @@ function hihohoPage() {
     } else {
         hihohoPage.setAttribute('hidden', 'hidden');
         hihohoPageBtn.classList.remove('active-color');
-//        selectLvlBtn.classList.toggle('active-color');
     };
 };
 
@@ -251,5 +251,34 @@ function activeMenuBtn() {
 };
 
 selectLvlBtn.addEventListener('click', activeMenuBtn);
+
+
+//
+// Функция отвечает за рандомное назначение чисел
+//
+
+function updateBackground() {
+	var images = [
+		'/img/moon.png',
+		'/img/rocket.png',
+		'/img/sputnik.png'
+	];
+	
+	var randomImageNumber = Math.round(Math.random() * (images.length - 1));
+	var mainContainer = document.getElementById('main');
+	
+	mainContainer.style.backgroundImage = 'url(' + images[randomImageNumber] + ')';
+};
+
+
+
+
+
+
+
+
+
+
+
 
 
